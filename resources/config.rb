@@ -5,7 +5,7 @@ resource_name :yarn_config
 property :dir, String, name_property: true
 property :user, String
 property :user_home, [String, nil], default: nil
-property :command, String, default: nil
+property :config_command, String, default: nil
 property :config_key, String, default: nil
 property :config_value, String, default: nil
 
@@ -18,7 +18,7 @@ action :run do
     user_home = ::Etc.getpwnam(new_resource.user).dir
   end
 
-  run_command = "yarn config #{new_resource.comamnd} #{new_resource.config_key} #{new_resource.config_value}"
+  run_command = "yarn config #{new_resource.config_command} #{new_resource.config_key} #{new_resource.config_value}"
 
   execute "execute yarn config at `#{new_resource.dir}`" do
     command run_command
