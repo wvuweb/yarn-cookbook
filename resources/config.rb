@@ -2,6 +2,7 @@ require 'etc'
 
 resource_name :yarn_config
 
+property :dir, String, name_property: true
 property :user, String
 property :user_home, [String, nil], default: nil
 property :command, String, default: nil
