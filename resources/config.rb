@@ -4,10 +4,10 @@ resource_name :yarn_config
 
 property :dir, String, name_property: true
 property :user, String
-property :user_home, [String, nil], default: nil
-property :config_command, String, default: nil
-property :config_key, String, default: nil
-property :config_value, String, default: nil
+property :user_home, [String, nil], default: ""
+property :config_command, String, default: ""
+property :config_key, String, default: ""
+property :config_value, String, default: ""
 
 default_action :run
 
