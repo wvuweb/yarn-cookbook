@@ -21,13 +21,15 @@ recipe 'yarn::upgrade_package', 'Install the latest version of Yarn'
 provides 'yarn_install[run]'
 provides 'yarn_run[run]'
 
+provides 'yarn_config[run]'
+
 scm_url = 'https://github.com/aspyatkin/yarn-cookbook'
 source_url scm_url if respond_to?(:source_url)
 issues_url "#{scm_url}/issues" if respond_to?(:issues_url)
 
 depends 'apt'
 
-chef_version '~> 12'
+chef_version '>= 12'
 supports 'debian', '>= 7.0'
 supports 'ubuntu', '>= 14.04'
 supports 'centos', '>= 7.0'
